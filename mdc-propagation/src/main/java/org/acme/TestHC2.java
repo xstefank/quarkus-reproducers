@@ -12,7 +12,7 @@ public class TestHC2 implements HealthCheck {
     @Override
     public HealthCheckResponse call() {
         MDC.put("health-check", getClass().getSimpleName());
-        Log.info("Health check");
+        Log.info("Health check 2");
         return HealthCheckResponse.up("test-hc2");
     }
 }
