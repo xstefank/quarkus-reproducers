@@ -25,14 +25,12 @@ public class DependentHealthCheck implements HealthCheck {
     public HealthCheckResponse call() {
         greetingResourceList.add(new GreetingResource());
         Log.info("Dependent health check called");
-        Log.info("Bean " + bean.getId());
-        Log.error(Instant.now());
+        Log.info(Instant.now() + "Bean " + bean.getId());
         return HealthCheckResponse.up("Dependent health check");
     }
 
     @PreDestroy
     public void preDestroy() {
-        Log.info("PreDestroy called");
-        Log.info(Instant.now());
+        Log.info("PreDestroy called " + Instant.now());
     }
 }
