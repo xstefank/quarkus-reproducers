@@ -10,7 +10,7 @@ repositories {
 
 dependencies {
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
-    implementation enforcedPlatform("${quarkusPlatformGroupId}:quarkus-operator-sdk-bom:${quarkusPlatformVersion}")
+    implementation enforcedPlatform("io.quarkiverse.operatorsdk:quarkus-operator-sdk-bom:6.7.3")
     implementation 'io.quarkiverse.operatorsdk:quarkus-operator-sdk'
     implementation 'io.quarkus:quarkus-arc'
     testImplementation 'io.quarkus:quarkus-junit5'
