@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.acme";
+option java_outer_classname = "TestProtos";
+
+package test;
+
+message Item {
+  string value = 1;
+}
+
+service Streaming {
+  rpc pipe(stream Item) returns (stream Item) {}  // Reads a streams and return a streams
+}
