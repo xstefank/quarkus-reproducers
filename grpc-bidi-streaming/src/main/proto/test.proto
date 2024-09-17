@@ -11,6 +11,8 @@ message Item {
 }
 
 service Streaming {
-  rpc pipe(stream Item) returns (stream Item) {}  // Reads a streams and return a streams
-  rpc pipe1(Item) returns (Item) {}  // Reads a streams and return a single item
+  rpc unary(Item) returns (Item) {}  // Reads a streams and return a single item
+  rpc bidiStreaming(stream Item) returns (stream Item) {}  // Reads a streams and return a streams
+  rpc serverStreaming(Item) returns (stream Item) {}  // Reads a single item and return a streams
+  rpc clientStreaming(stream Item) returns (Item) {}  // Reads a streams and return a single item
 }
