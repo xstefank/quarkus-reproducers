@@ -18,11 +18,11 @@ public class SimpleHealthCheck implements HealthCheck {
 
     @PostConstruct
     void init() {
-        Log.warn("Init called");
+        Log.warn("Init called " + this);
     }
 
     @PreDestroy
     void destroy() {
-        Log.warn("Destroy called");
+        Log.warn("Destroy called " + this);
     }
 }
