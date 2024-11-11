@@ -1,8 +1,7 @@
 package org.acme;
 
 import io.quarkus.logging.Log;
-import io.smallrye.common.vertx.VertxContext;
-import io.vertx.core.Context;
+import io.smallrye.common.vertx.ContextLocals;
 import io.vertx.core.Vertx;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
@@ -39,7 +38,7 @@ public class GreetingResource {
     }
 
     private void callChild() {
-        getContext().removeLocal("tenant");
+        ContextLocals.remove("tenant");
         Log.infof("Child thread tenant %s", tenantContext.getTenant());
         tenantContext.setTenant("child");
         Log.infof("Child thread tenant %s", tenantContext.getTenant());
@@ -48,21 +47,11 @@ public class GreetingResource {
     public final class TenantContext {
 
         public void setTenant(String tenant) {
-            getContext().putLocal("tenant", tenant);
+            ContextLocals.put("tenant", tenant);
         }
 
         public String getTenant() {
-            return getContext().getLocal("tenant");
-        }
-    }
-
-    private Context getContext() {
-        Context ctxt = Vertx.currentContext();
-        if (ctxt != null && VertxContext.isDuplicatedContext(ctxt)) {
-            return ctxt;
-        } else {
-            Context current = vertx.getOrCreateContext();
-            return VertxContext.createNewDuplicatedContext(current);
+            return ContextLocals.<String>get("tenant").orElse("-");
         }
     }
 
