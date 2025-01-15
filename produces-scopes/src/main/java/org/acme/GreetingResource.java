@@ -19,6 +19,7 @@ public class GreetingResource {
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
         System.out.println("APP " + appScopedBean);
+        System.out.println("APP manual " + AppScopedBean.getInstance());
         System.out.println("REQ " + requestScopedBean);
         return "Hello from Quarkus REST";
     }
