@@ -10,6 +10,7 @@ import org.eclipse.microprofile.health.Liveness;
 import org.eclipse.microprofile.health.Readiness;
 import org.eclipse.microprofile.health.Startup;
 
+import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @ApplicationScoped
@@ -22,6 +23,8 @@ public class HealthObserver {
     private AtomicInteger counterStartup = new AtomicInteger();
 
     public void observeHealth(@Observes @Default HealthStatusChangeEvent event) throws Exception {
+        System.out.println(Thread.currentThread().getName());
+        System.out.println(Arrays.toString(Thread.currentThread().getStackTrace()));
         System.out.println("HEALTH counter = " + counterHealth.incrementAndGet());
         System.out.println(event.healthType());
         System.out.println(event.status());
