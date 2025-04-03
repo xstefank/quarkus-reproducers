@@ -26,12 +26,6 @@ public class GreetingResource {
     }
 
     @GET
-    @Path("/list2")
-    public void list2() {
-        System.out.println(TestEntity2.listAll());
-    }
-
-    @GET
     @Path("/delete")
     public void delete() {
         TestEntity.deleteAll();
