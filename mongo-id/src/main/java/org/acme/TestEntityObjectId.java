@@ -8,15 +8,7 @@ import org.bson.types.ObjectId;
 public class TestEntityObjectId extends TestEntityBase {
 
     @BsonId
-    private ObjectId _id;
-
-    public ObjectId get_id() {
-        return _id;
-    }
-
-    public void set_id(ObjectId _id) {
-        this._id = _id;
-    }
+    public ObjectId _id;
 
     @Override
     public void set_id(String id) {
