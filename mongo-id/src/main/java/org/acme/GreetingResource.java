@@ -9,25 +9,56 @@ import org.bson.types.ObjectId;
 @Path("/hello")
 public class GreetingResource {
 
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
-        TestEntity testEntity = new TestEntity(new ObjectId("507f1f77bcf86cd799439011"));
-        testEntity.persist();
-
-        System.out.println(TestEntity.listAll());
-        return "Hello from Quarkus REST";
-    }
+//    @GET
+//    @Produces(MediaType.TEXT_PLAIN)
+//    public String hello() {
+//        TestEntityString testEntity = new TestEntityString(new ObjectId(), "Hello World");
+//        testEntity.persist();
+//
+//        System.out.println(TestEntityString.listAll());
+//        return "Hello from Quarkus REST";
+//    }
 
     @GET
     @Path("/list")
     public void list() {
-        System.out.println(TestEntity.listAll());
+        System.out.println(TestEntityString.listAll());
     }
 
     @GET
     @Path("/delete")
     public void delete() {
-        TestEntity.deleteAll();
+        TestEntityString.deleteAll();
     }
+
+
+    @GET
+    @Path("/find/{id}")
+    public TestEntityString find(String id) {
+        return TestEntityString.findById(new ObjectId(id));
+    }
+
+    @GET
+    @Path("/find2/{id}")
+    public TestEntityString find2(String id) {
+        return TestEntityString.find("_id", id).firstResult();
+    }
+
+    @GET
+    @Path("/find3/{id}")
+    public TestEntityBase find3(String id) {
+        TestEntityBase testEntity;
+
+        if (ObjectId.isValid(id)) {
+            testEntity = TestEntityObjectId.findById(new ObjectId(id));
+        } else {
+            testEntity = TestEntityString.find("_id", id).firstResult();
+        }
+
+        testEntity.set_id(id);
+        return testEntity;
+    }
+
+
+
 }
