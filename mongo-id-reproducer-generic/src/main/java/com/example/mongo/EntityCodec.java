@@ -99,7 +99,7 @@ public abstract class EntityCodec<V extends Object> implements CollectibleCodec<
             }
 
             for (Field field : clazz.getDeclaredFields()) {
-                if (!field.getName().equals("id")) {
+                if (!field.getName().equals("_id")) {
                     field.setAccessible(true);
                     field.set(entity, doc.get(field.getName()));
                 }
@@ -113,7 +113,7 @@ public abstract class EntityCodec<V extends Object> implements CollectibleCodec<
 
     private Field getIdField() {
         try {
-            Field id = getEncoderClass().getDeclaredField("id");
+            Field id = getEncoderClass().getDeclaredField("_id");
             id.setAccessible(true);
             return id;
         } catch (NoSuchFieldException e) {
