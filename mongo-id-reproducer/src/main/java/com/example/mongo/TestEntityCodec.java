@@ -36,7 +36,7 @@ public class TestEntityCodec implements CollectibleCodec<TestEntity> {
     @Override
     public TestEntity generateIdIfAbsentFromDocument(TestEntity testEntity) {
         if (!documentHasId(testEntity)) {
-            testEntity.setId(UUID.randomUUID().toString());
+            testEntity.setId(new ObjectId().toString());
         }
 
         return testEntity;
