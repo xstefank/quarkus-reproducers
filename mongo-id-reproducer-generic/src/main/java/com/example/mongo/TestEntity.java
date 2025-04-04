@@ -16,7 +16,8 @@ import org.bson.codecs.pojo.annotations.BsonProperty;
 public class TestEntity {
 
     @BsonId
-    public String _id; // We need String as ObjectId would not be parsed from non hex strings
+    @BsonProperty("_id")
+    public String id; // We need String as ObjectId would not be parsed from non hex strings
 
     public String name;
 }

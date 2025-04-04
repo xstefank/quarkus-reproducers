@@ -12,6 +12,8 @@ import org.bson.codecs.Codec;
 import org.bson.codecs.CollectibleCodec;
 import org.bson.codecs.DecoderContext;
 import org.bson.codecs.EncoderContext;
+import org.bson.codecs.pojo.annotations.BsonId;
+import org.bson.codecs.pojo.annotations.BsonProperty;
 import org.bson.types.ObjectId;
 
 import java.lang.reflect.Constructor;
@@ -21,9 +23,13 @@ import java.lang.reflect.Field;
 public abstract class EntityCodec<V extends Object> implements CollectibleCodec<V> {
 
     private final Codec<Document> documentCodec;
+    private final Field idField;
+    private final String idFieldName;
 
     public EntityCodec() {
         this.documentCodec = MongoClientSettings.getDefaultCodecRegistry().get(Document.class);
+        this.idField = getIdField();
+        this.idFieldName = getFieldName(this.idField);
     }
 
     @Override
@@ -32,7 +38,7 @@ public abstract class EntityCodec<V extends Object> implements CollectibleCodec<
         Class<?> clazz = entity.getClass();
         for (Field field : clazz.getDeclaredFields()) {
             try {
-                document.put(field.getName(), field.get(entity));
+                document.put(getFieldName(field), field.get(entity));
             } catch (IllegalAccessException e) {
                 throw new RuntimeException(e);
             }
@@ -89,7 +95,7 @@ public abstract class EntityCodec<V extends Object> implements CollectibleCodec<
 
             Field id = getIdField();
 
-            Object docId = doc.get("_id");
+            Object docId = doc.get(idFieldName);
             if (ObjectId.class.isAssignableFrom(docId.getClass())) {
                 id.set(entity, ((ObjectId) docId).toString());
             } else if (String.class.isAssignableFrom(docId.getClass())) {
@@ -99,9 +105,9 @@ public abstract class EntityCodec<V extends Object> implements CollectibleCodec<
             }
 
             for (Field field : clazz.getDeclaredFields()) {
-                if (!field.getName().equals("_id")) {
+                if (!field.getName().equals(idFieldName)) {
                     field.setAccessible(true);
-                    field.set(entity, doc.get(field.getName()));
+                    field.set(entity, doc.get(getFieldName(field)));
                 }
             }
 
@@ -113,11 +119,32 @@ public abstract class EntityCodec<V extends Object> implements CollectibleCodec<
 
     private Field getIdField() {
         try {
-            Field id = getEncoderClass().getDeclaredField("_id");
+            Field id = null;
+            // try to find field with the @BsonId
+            for (Field field : this.getClass().getDeclaredFields()) {
+                if (field.getAnnotation(BsonId.class) != null) {
+                    id = field;
+                    break;
+                }
+            }
+
+            // if not defined, try to find "id" field
+            if (id == null) {
+                id = getEncoderClass().getDeclaredField("id");
+            }
+
             id.setAccessible(true);
             return id;
         } catch (NoSuchFieldException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private String getFieldName(Field field) {
+        BsonProperty bsonProperty = field.getAnnotation(BsonProperty.class);
+        if (bsonProperty != null) {
+            return bsonProperty.value();
+        }
+        return field.getName();
     }
 }
