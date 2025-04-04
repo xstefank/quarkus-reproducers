@@ -2,7 +2,6 @@ package com.example.mongo;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
-import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
@@ -43,7 +42,7 @@ public class TestController {
     @GET
     @Path("/create")
     public TestEntity create() {
-        TestEntity testEntity= TestEntity.builder().name("Test").build();
+        TestEntity testEntity= TestEntity.builder().id("ssdgfshdgf").name("Test").build();
         testRepository.persist(testEntity);
         return testEntity;
     }

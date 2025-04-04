@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.bson.codecs.pojo.annotations.BsonDiscriminator;
 import org.bson.codecs.pojo.annotations.BsonId;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 
@@ -13,11 +14,12 @@ import org.bson.codecs.pojo.annotations.BsonProperty;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@BsonDiscriminator(key = "_class", value = "com.example.mongo.TestEntity")
 public class TestEntity {
 
     @BsonId
     @BsonProperty("_id")
-    public String id; // We need String as ObjectId would not be parsed from non hex strings
+    private String id; // We need String as ObjectId would not be parsed from non hex strings
 
-    public String name;
+    private String name;
 }
