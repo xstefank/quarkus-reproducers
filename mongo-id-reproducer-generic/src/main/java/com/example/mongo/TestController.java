@@ -42,7 +42,7 @@ public class TestController {
     @GET
     @Path("/create")
     public TestEntity create() {
-        TestEntity testEntity= TestEntity.builder().id("ssdgfshdgf").name("Test").build();
+        TestEntity testEntity= TestEntity.builder().name("Test").build();
         testRepository.persist(testEntity);
         return testEntity;
     }
