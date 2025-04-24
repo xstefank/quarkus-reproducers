@@ -7,7 +7,7 @@ import org.eclipse.microprofile.health.HealthCheckResponse;
 import org.eclipse.microprofile.health.Liveness;
 import org.jboss.logging.MDC;
 
-//@Liveness
+@Liveness
 public class AsyncTestHC2 implements AsyncHealthCheck {
 
     @Override
