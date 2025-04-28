@@ -11,7 +11,7 @@ import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
 
 public class InMemoryLogHandler extends ExtHandler {
-    private static final PatternFormatter FORMATTER = new PatternFormatter("health-check=%X{health-check} context=%X{context} ### %s");
+    private static final PatternFormatter FORMATTER = new PatternFormatter("%d{HH:mm:ss} %-5p health-check=%X{health-check} context=%X{context} [%c{2.}] (%t) %s%n");
 
     private static final List<String> recordList = new CopyOnWriteArrayList<>();
 
@@ -35,7 +35,7 @@ public class InMemoryLogHandler extends ExtHandler {
                 reportError("Formatting error", ex, ErrorManager.FORMAT_FAILURE);
                 return;
             }
-            if (formatted.length() == 0) {
+            if (formatted.isEmpty()) {
                 return;
             }
             recordList.add(formatted);
