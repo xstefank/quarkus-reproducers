@@ -5,7 +5,7 @@ import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
 import org.eclipse.microprofile.health.Liveness;
 import org.jboss.logging.Logger;
-import org.jboss.logmanager.MDC;
+import org.jboss.logging.MDC;
 
 @Liveness
 public class TestHC2 implements HealthCheck {
