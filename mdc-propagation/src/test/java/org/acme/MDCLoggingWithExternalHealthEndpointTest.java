@@ -14,7 +14,7 @@ public class MDCLoggingWithExternalHealthEndpointTest {
   @Inject
   InMemoryLogHandlerProducer producer;
 
-  @RepeatedTest(10)
+  @RepeatedTest(100)
   void testMDCLoggingWithExternalHealthEndpoint() {
     InMemoryLogHandler.reset();
 

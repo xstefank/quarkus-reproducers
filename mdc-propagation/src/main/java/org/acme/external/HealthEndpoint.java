@@ -1,24 +1,23 @@
 package org.acme.external;
 
-import io.quarkus.logging.Log;
-import io.quarkus.vertx.core.runtime.VertxMDC;
 import io.smallrye.common.vertx.VertxContext;
+import io.smallrye.health.SmallRyeHealth;
 import io.smallrye.health.SmallRyeHealthReporter;
+import io.smallrye.mutiny.Uni;
+import io.smallrye.mutiny.vertx.MutinyHelper;
+import io.vertx.core.Context;
 import io.vertx.core.Vertx;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.core.Response;
 import org.jboss.logmanager.MDC;
 
-import java.util.UUID;
-
 @Path("/health")
 @ApplicationScoped
 public class HealthEndpoint {
-
-  public static final Object LOCK = new Object();
 
   @Inject
   SmallRyeHealthReporter smallRyeHealthReporter;
@@ -26,16 +25,14 @@ public class HealthEndpoint {
   @GET
   public Response health() {
     System.out.println("-----------------------------------------------------------------------");
-//    VertxMDC.INSTANCE.putObject("class", "HealthEndpoint asdf", VertxContext.newNestedContext());
     MDC.put("class", "HealthEndpoint");
-//    Vertx.currentContext().putLocal("class", "HealthEndpoint asdf");
 
-    String id = UUID.randomUUID().toString();
-    System.out.println("Main thread " + id);
-    // this was testing custom 999-SNAPSHOT
-//    VertxMDC.INSTANCE.contextualDataMap(Vertx.currentContext(), id);
+//    Context context = Vertx.currentContext();
+//    System.out.println("context = " + context.getClass());
+//    Uni<SmallRyeHealth> healthAsync = smallRyeHealthReporter.getHealthAsync();
+//    healthAsync.emitOn(MutinyHelper.executor(VertxContext.newNestedContext(context)));
+//    String s = healthAsync.await().indefinitely().getPayload().toString();
     String s = smallRyeHealthReporter.getHealth().getPayload().toString();
-//    Log.error("TASEASDF");
 
     return Response.ok(s).build();
   }

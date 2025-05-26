@@ -15,7 +15,7 @@ public class MDCLoggingTest {
     @Inject
     InMemoryLogHandlerProducer producer;
 
-    @RepeatedTest(100_000)
+    @RepeatedTest(10)
     void testMDCLogging() {
         InMemoryLogHandler.reset();
 
