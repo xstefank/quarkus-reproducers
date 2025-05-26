@@ -14,6 +14,8 @@ public class TestHC2 implements HealthCheck {
 
     @Override
     public HealthCheckResponse call() {
+        System.out.println("TestHC2.call() with context " + Vertx.currentContext().hashCode());
+
         MDC.put("health-check", getClass().getSimpleName());
         MDC.put("context", Vertx.currentContext() != null ? String.valueOf(Vertx.currentContext().hashCode()) : "null");
         log.error("Health check 2 - " + Thread.currentThread().getName());

@@ -15,6 +15,8 @@ public class AsyncTestHC implements AsyncHealthCheck {
 
     @Override
     public Uni<HealthCheckResponse> call() {
+        System.out.println("AsyncTestHC.call() with context " + Vertx.currentContext().hashCode());
+
         MDC.put("health-check", getClass().getSimpleName());
         MDC.put("context", Vertx.currentContext() != null ? String.valueOf(Vertx.currentContext().hashCode()) : "null");
         log.error("Async Health check - " + Thread.currentThread().getName());
