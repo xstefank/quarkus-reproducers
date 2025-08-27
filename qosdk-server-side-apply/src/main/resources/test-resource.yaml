@@ -1,0 +1,6 @@
+apiVersion: "io.xstefank/v1"
+kind: TestResource
+metadata:
+    name: tr-any
+spec:
+    field: TestValue3
