@@ -10,6 +10,8 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import org.eclipse.microprofile.health.HealthCheckResponse;
 
+import java.util.Random;
+
 @Path("/hello")
 public class GreetingResource {
 
@@ -17,10 +19,9 @@ public class GreetingResource {
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
         SmallRyeHealthReporter smallRyeHealthReporter = new SmallRyeHealthReporter();
-        smallRyeHealthReporter.postConstruct();
 
         HealthRegistry livenessRegistry = HealthRegistries.getRegistry(HealthType.LIVENESS);
-        livenessRegistry.register(() -> HealthCheckResponse.up("liveness"));
+        livenessRegistry.register(() -> HealthCheckResponse.named("liveness").status(new Random().nextBoolean()).build());
 
         HealthRegistry readinessRegistry = HealthRegistries.getRegistry(HealthType.READINESS);
         readinessRegistry.register(() -> HealthCheckResponse.up("readiness"));
