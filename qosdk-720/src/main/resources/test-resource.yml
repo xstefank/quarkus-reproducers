@@ -1,0 +1,7 @@
+apiVersion: "io.xstefank/v1"
+kind: TestResource
+metadata:
+  name: test-resource-sample
+  namespace: default
+spec:
+  field: "f1"
