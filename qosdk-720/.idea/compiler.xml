@@ -2,10 +2,13 @@
 <project version="4">
   <component name="CompilerConfiguration">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <bytecodeTargetLevel>
       <module name="qosdk-720" target="21" />
     </bytecodeTargetLevel>
 =======
+=======
+>>>>>>> Stashed changes
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -19,6 +22,9 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="qosdk-720" options="-parameters" />
     </option>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   </component>
 </project>
