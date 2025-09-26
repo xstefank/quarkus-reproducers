@@ -4,18 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cec89243-5811-4b17-9ff0-81eae5ed032f" name="Changes" comment="" />
+    <list default="true" id="0840d1df-edfc-4e10-bffb-204d4e58660d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/xstefank/CustomActionvationCondition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/xstefank/CustomActionvationCondition.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -39,7 +37,7 @@
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 8
 }]]></component>
-  <component name="ProjectId" id="32980ctC8AZDY6egva5UUoDDeJe" />
+  <component name="ProjectId" id="32mlGARobdUdfIiaxJBgVmbs8Pd" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
     <ConfirmationsSetting value="1" id="Remove" />
@@ -53,7 +51,6 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_directory_selection": "/home/mstefank/git/xstefank/quarkus-reproducers/qosdk-720/src/test/java",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -63,19 +60,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="io.xstefank" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="io.xstefank" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Quarkus.qosdk-720">
-    <configuration name="qosdk-720" type="QuarkusRunConfiguration" factoryName="QuarkusRunConfiguration">
-      <module name="qosdk-720" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="qosdk-720" type="QuarkusRunConfigurationType" factoryName="Quarkus" nameIsGenerated="true">
       <module name="qosdk-720" />
       <QsMavenRunConfiguration>
@@ -128,12 +113,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="cec89243-5811-4b17-9ff0-81eae5ed032f" name="Changes" comment="" />
-      <created>1756821210176</created>
+      <changelist id="0840d1df-edfc-4e10-bffb-204d4e58660d" name="Changes" comment="" />
+      <created>1758033530085</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1756821210176</updated>
-      <workItem from="1756821211282" duration="2676000" />
+      <updated>1758033530085</updated>
+      <workItem from="1758033531153" duration="8206000" />
     </task>
     <servers />
   </component>

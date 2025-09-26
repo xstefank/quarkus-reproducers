@@ -16,8 +16,6 @@ public class DeploymentDependent extends CRUDKubernetesDependentResource<Deploym
 
     @Override
     protected Deployment desired(TestResource primary, Context<TestResource> context) {
-        System.out.println("ADSFDSAFDSAF " + primary.getMetadata().getNamespace());
-        System.out.println("AAAAAAAAAAAAAAA " + myCustomBean.ping());
         return new DeploymentBuilder()
             .withMetadata(new ObjectMetaBuilder()
                 .withName(primary.getMetadata().getName() + "-deployment")

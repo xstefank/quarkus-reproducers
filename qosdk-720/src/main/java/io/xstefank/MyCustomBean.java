@@ -7,7 +7,9 @@ import java.util.UUID;
 @ApplicationScoped
 public class MyCustomBean {
 
+    private final String id = UUID.randomUUID().toString();
+
     public String ping() {
-        return UUID.randomUUID().toString();
+        return id;
     }
 }
