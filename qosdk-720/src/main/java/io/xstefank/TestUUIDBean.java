@@ -5,11 +5,11 @@ import jakarta.enterprise.context.ApplicationScoped;
 import java.util.UUID;
 
 @ApplicationScoped
-public class MyCustomBean {
+public class TestUUIDBean {
 
     private final String id = UUID.randomUUID().toString();
 
-    public String ping() {
+    public String uuid() {
         return id;
     }
 }

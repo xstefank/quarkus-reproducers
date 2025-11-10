@@ -5,8 +5,8 @@ import io.fabric8.kubernetes.model.annotation.Group;
 import io.fabric8.kubernetes.model.annotation.ShortNames;
 import io.fabric8.kubernetes.model.annotation.Version;
 
-@Group("io.xstefank")
+@Group("halkyon.io")
 @Version("v1")
 @ShortNames("tr")
-public class TestResource extends CustomResource<io.xstefank.TestSpec, io.xstefank.TestStatus> {
+public class TestResource extends CustomResource<TestSpec, TestStatus> {
 }

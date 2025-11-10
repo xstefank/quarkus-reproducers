@@ -14,11 +14,18 @@ import jakarta.inject.Inject;
 public class DeletePostCondition implements Condition {
 
     @Inject
-    MyCustomBean myCustomBean;
+    TestUUIDBean testUUIDBean;
+
+    private String uuid;
 
     @Override
     public boolean isMet(DependentResource dependentResource, HasMetadata primary, Context context) {
-        Log.error("DeletePostCondition " + myCustomBean.ping());
+        Log.error("XXXXXXXXXXX DeletePostCondition isMet");
+        this.uuid = testUUIDBean.uuid();
         return true;
+    }
+
+    public String getUuid() {
+        return uuid;
     }
 }

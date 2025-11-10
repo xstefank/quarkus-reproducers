@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0840d1df-edfc-4e10-bffb-204d4e58660d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/xstefank/CustomActionvationCondition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/xstefank/CustomActionvationCondition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/xstefank/DeletePostCondition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/xstefank/DeletePostCondition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/xstefank/DeploymentDependent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/xstefank/DeploymentDependent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/xstefank/GreetingResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/xstefank/MyCustomBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/xstefank/ReadyPostCondition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/xstefank/ReadyPostCondition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/xstefank/ReconcilePrecondition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/xstefank/ReconcilePrecondition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/xstefank/TestReconciler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/xstefank/TestReconciler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/xstefank/TestResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/xstefank/TestResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/xstefank/TestSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/xstefank/TestSpec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/xstefank/TestStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/xstefank/TestStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/test-resource.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/test-resource.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +27,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -34,9 +47,9 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="32mlGARobdUdfIiaxJBgVmbs8Pd" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -51,6 +64,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/mstefank/git/xstefank/quarkus-reproducers/qosdk-720/src/main/java/io/xstefank",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -60,6 +74,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/io/xstefank" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="qosdk-720" type="QuarkusRunConfigurationType" factoryName="Quarkus" nameIsGenerated="true">
       <module name="qosdk-720" />
@@ -119,6 +138,7 @@
       <option name="presentableId" value="Default" />
       <updated>1758033530085</updated>
       <workItem from="1758033531153" duration="8206000" />
+      <workItem from="1762784321669" duration="2744000" />
     </task>
     <servers />
   </component>

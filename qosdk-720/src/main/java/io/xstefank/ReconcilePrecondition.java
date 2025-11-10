@@ -5,7 +5,6 @@ import io.javaoperatorsdk.operator.api.reconciler.Context;
 import io.javaoperatorsdk.operator.api.reconciler.dependent.DependentResource;
 import io.javaoperatorsdk.operator.processing.dependent.workflow.Condition;
 import io.quarkus.arc.Unremovable;
-import io.quarkus.logging.Log;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
@@ -14,11 +13,18 @@ import jakarta.inject.Inject;
 public class ReconcilePrecondition implements Condition {
 
     @Inject
-    MyCustomBean myCustomBean;
+    TestUUIDBean testUUIDBean;
+
+    private String uuid;
 
     @Override
+
     public boolean isMet(DependentResource dependentResource, HasMetadata primary, Context context) {
-        Log.error("ReconcilePrecondition " + myCustomBean.ping());
+        uuid = testUUIDBean.uuid();
         return true;
+    }
+
+    public String getUuid() {
+        return uuid;
     }
 }
