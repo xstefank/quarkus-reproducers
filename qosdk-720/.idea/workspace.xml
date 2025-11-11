@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0840d1df-edfc-4e10-bffb-204d4e58660d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/xstefank/ReadyPostCondition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/xstefank/ReadyPostCondition.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +126,7 @@
       <option name="presentableId" value="Default" />
       <updated>1758033530085</updated>
       <workItem from="1758033531153" duration="8206000" />
-      <workItem from="1762784321669" duration="3741000" />
+      <workItem from="1762784321669" duration="5517000" />
     </task>
     <servers />
   </component>
