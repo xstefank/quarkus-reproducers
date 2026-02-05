@@ -15,11 +15,15 @@ public class GreetingResource {
     @ConfigProperty(name = "another-prop")
     String anotherProp;
 
+    @ConfigProperty(name = "config.\"with.quotes\".value")
+    String quotedProp;
+
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
         System.out.println(someProp);
         System.out.println(anotherProp);
+        System.out.println(quotedProp);
         return "Hello from Quarkus REST";
     }
 }
