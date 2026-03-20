@@ -1,96 +1,112 @@
 {
-    "timestamp": "2026-03-06T15:35:17.7268412+01:00",
-    "sequence": 1121,
+    "timestamp": "2026-03-20T10:08:08.019394897+01:00",
+    "sequence": 1149,
     "loggerClassName": "org.jboss.logging.Logger",
     "loggerName": "io.quarkus.config",
     "level": "WARN",
     "message": "The \"quarkus.log.file.json\" config property is deprecated and should not be used anymore.",
     "threadName": "Quarkus Main Thread",
-    "threadId": 105,
+    "threadId": 169,
     "mdc": {
     },
     "ndc": "",
     "hostName": "set-fi",
     "processName": "/home/mstefank/.sdkman/candidates/java/25.0.2-tem/bin/java",
-    "processId": 700372
+    "processId": 54772
 }
 {
-    "timestamp": "2026-03-06T15:35:17.804878072+01:00",
-    "sequence": 1122,
+    "timestamp": "2026-03-20T10:08:08.025571394+01:00",
+    "sequence": 1150,
     "loggerClassName": "org.jboss.logging.Logger",
     "loggerName": "io.quarkus",
     "level": "INFO",
-    "message": "log-json-handler 1.0.0-SNAPSHOT on JVM (powered by Quarkus 999-SNAPSHOT) started in 1.509s. Listening on: http://localhost:8080",
+    "message": "log-json-handler 1.0.0-SNAPSHOT on JVM (powered by Quarkus 999-SNAPSHOT) started in 0.298s. Listening on: http://localhost:8080",
     "threadName": "Quarkus Main Thread",
-    "threadId": 105,
+    "threadId": 169,
     "mdc": {
     },
     "ndc": "",
     "hostName": "set-fi",
     "processName": "/home/mstefank/.sdkman/candidates/java/25.0.2-tem/bin/java",
-    "processId": 700372
+    "processId": 54772
 }
 {
-    "timestamp": "2026-03-06T15:35:17.805813261+01:00",
-    "sequence": 1123,
+    "timestamp": "2026-03-20T10:08:08.026147741+01:00",
+    "sequence": 1151,
     "loggerClassName": "org.jboss.logging.Logger",
     "loggerName": "io.quarkus",
     "level": "INFO",
     "message": "Profile dev activated. Live Coding activated.",
     "threadName": "Quarkus Main Thread",
-    "threadId": 105,
+    "threadId": 169,
     "mdc": {
     },
     "ndc": "",
     "hostName": "set-fi",
     "processName": "/home/mstefank/.sdkman/candidates/java/25.0.2-tem/bin/java",
-    "processId": 700372
+    "processId": 54772
 }
 {
-    "timestamp": "2026-03-06T15:35:17.806438289+01:00",
-    "sequence": 1124,
+    "timestamp": "2026-03-20T10:08:08.026603506+01:00",
+    "sequence": 1152,
     "loggerClassName": "org.jboss.logging.Logger",
     "loggerName": "io.quarkus",
     "level": "INFO",
     "message": "Installed features: [cdi, rest, smallrye-context-propagation, vertx]",
     "threadName": "Quarkus Main Thread",
-    "threadId": 105,
+    "threadId": 169,
     "mdc": {
     },
     "ndc": "",
     "hostName": "set-fi",
     "processName": "/home/mstefank/.sdkman/candidates/java/25.0.2-tem/bin/java",
-    "processId": 700372
+    "processId": 54772
 }
 {
-    "timestamp": "2026-03-06T15:35:19.140473408+01:00",
-    "sequence": 1125,
+    "timestamp": "2026-03-20T10:08:08.02712244+01:00",
+    "sequence": 1153,
+    "loggerClassName": "org.jboss.logging.Logger",
+    "loggerName": "io.quarkus.deployment.dev.RuntimeUpdatesProcessor",
+    "level": "INFO",
+    "message": "Live reload total time: 0.309s ",
+    "threadName": "vert.x-worker-thread-1",
+    "threadId": 120,
+    "mdc": {
+    },
+    "ndc": "",
+    "hostName": "set-fi",
+    "processName": "/home/mstefank/.sdkman/candidates/java/25.0.2-tem/bin/java",
+    "processId": 54772
+}
+{
+    "timestamp": "2026-03-20T10:08:08.034279705+01:00",
+    "sequence": 1154,
     "loggerClassName": "org.jboss.logging.Logger",
     "loggerName": "io.xstefank.GreetingResource",
     "level": "INFO",
     "message": "GreetingResource.hello()",
     "threadName": "executor-thread-1",
-    "threadId": 108,
+    "threadId": 172,
     "mdc": {
     },
     "ndc": "",
     "hostName": "set-fi",
     "processName": "/home/mstefank/.sdkman/candidates/java/25.0.2-tem/bin/java",
-    "processId": 700372
+    "processId": 54772
 }
 {
-    "timestamp": "2026-03-06T15:47:26.054468093+01:00",
-    "sequence": 1128,
+    "timestamp": "2026-03-20T10:50:10.109422589+01:00",
+    "sequence": 1157,
     "loggerClassName": "org.jboss.logging.Logger",
     "loggerName": "io.quarkus",
     "level": "INFO",
-    "message": "log-json-handler stopped in 0.004s",
+    "message": "log-json-handler stopped in 0.001s",
     "threadName": "Shutdown thread",
-    "threadId": 106,
+    "threadId": 170,
     "mdc": {
     },
     "ndc": "",
     "hostName": "set-fi",
     "processName": "/home/mstefank/.sdkman/candidates/java/25.0.2-tem/bin/java",
-    "processId": 700372
+    "processId": 54772
 }
