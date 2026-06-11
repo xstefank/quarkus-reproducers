@@ -1,0 +1,7 @@
+apiVersion: reproducer.operatorsdk.quarkiverse.io/v1
+kind: TestResource
+metadata:
+  name: test-sample
+  namespace: default
+spec:
+  value: hello
