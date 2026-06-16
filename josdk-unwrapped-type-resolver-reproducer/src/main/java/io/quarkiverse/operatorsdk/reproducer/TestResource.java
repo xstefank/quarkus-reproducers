@@ -9,3 +9,5 @@ import io.fabric8.kubernetes.model.annotation.Version;
 @Version("v1")
 public class TestResource extends CustomResource<TestSpec, TestStatus> implements Namespaced {
 }
+
+
