@@ -197,8 +197,6 @@
                                 <native.image.path>${project.build.directory}/${project.build.finalName}-runner</native.image.path>
                                 <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
                                 <maven.home>${maven.home}</maven.home>
-                                <quarkus.test.integration-test-artifact-type>kubernetes</quarkus.test.integration-test-artifact-type>
-                                <quarkus.test.kubernetes.exposure>port-forward</quarkus.test.kubernetes.exposure>
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>
