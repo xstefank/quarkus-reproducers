@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.xstefank</groupId>
+    <artifactId>fabric8-portforward-crc</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <!--
+        Minimal, standalone reproducer for a fabric8 kubernetes-client LocalPortForward issue observed against
+        CRC (OpenShift Local): the exact same code works fine against minikube and the Red Hat Developer Sandbox,
+        but fails specifically against CRC, even though a raw `oc port-forward` against the same pod works fine.
+
+        No Quarkus involved at all - just the fabric8 client, matching the exact dependency set/versions used by
+        Quarkus's own @QuarkusIntegrationTest Kubernetes/OpenShift launch mode
+        (test-framework/common/pom.xml in the quarkus repo).
+
+        Usage:
+          Point your current kubeconfig context at CRC (oc login ... https://api.crc.testing:6443), then:
+            mvn compile exec:java
+    -->
+
+    <properties>
+        <maven.compiler.release>21</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <fabric8.version>7.7.0</fabric8.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.fabric8</groupId>
+            <artifactId>kubernetes-client</artifactId>
+            <version>${fabric8.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.fabric8</groupId>
+            <artifactId>kubernetes-httpclient-vertx-5</artifactId>
+            <version>${fabric8.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.fabric8</groupId>
+            <artifactId>openshift-client</artifactId>
+            <version>${fabric8.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.4.1</version>
+                <configuration>
+                    <mainClass>io.xstefank.PortForwardRepro</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
